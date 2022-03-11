@@ -4,22 +4,21 @@
     import Ripple from "./Ripple.svelte";
     import { writable } from "svelte/store";
 
-    export let rippleBlur = 2,
-        speed = 500,
+    export let rippleBlur = 6,
+        speed = 800,
         color = "#fff",
         fontSize = "1rem",
-        bgColor = "93, 120, 255",
-        bgHover = bgColor,
-        bgActive = bgColor,
-        rippleColor = "#264169",
-        round = "0.5rem",
-        height = 60,
-        width = 250,
-        sizeIn = 20,
+        bgColor = "transparent",
+        bgHover = "#FFF",
+        bgActive = "#FFF",
+        rippleColor = "#FFF",
+        round = "0.2rem",
+        width = "7vw",
+        sizeIn = 40,
         opacityIn = 0.2,
-        shadow = "none",
-        shadowHover = "none",
-        shadowActive = "none";
+        shadow = 3,
+        shadowHover = 5,
+        shadowActive = 2;
 
     let shadows = {
             none: "none",
@@ -98,7 +97,7 @@
 
 <button
     on:click
-    style="--color: {color};--font-size: {fontSize};--bg-color: {bgColor};--bg-hover: {bgHover};--bg-active: {bgActive};--radius: {round};--ripple: {rippleColor};--height: {height}px;--width: {width}px;--shadow: {shadows[
+    style="--color: {color};--font-size: {fontSize};--bg-color: {bgColor};--bg-hover: {bgHover};--bg-active: {bgActive};--radius: {round};--ripple: {rippleColor}; width: {width};--shadow: {shadows[
         shadow
     ]};--shadow-h: {shadows[shadowHover]};--shadow-a: {shadows[shadowActive]}"
     bind:this={rippleBtn}
@@ -145,6 +144,14 @@
         -ms-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        display: flex;
+        min-width: 100px;
+        aspect-ratio: 63/88;
+        background-image: url("/src/assets/images/anime_card.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        text-align: center;
     }
 
     button:hover,
