@@ -9,7 +9,7 @@
 <ImageList class="cardlist">
     {#each Array(numOfCards) as _unused, i}
         <Item>
-            <CardButton />
+            <CardButton />fr
             <Supporting>
                 <Label>Card {i + 1}</Label>
             </Supporting>

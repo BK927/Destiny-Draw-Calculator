@@ -5,31 +5,28 @@
     import Textfield from "@smui/textfield";
     import HelperText from "@smui/textfield/helper-text";
     import CardList from "../components/CardList.svelte";
+    import { mdiArmFlex } from "@mdi/js";
 
-    let deckInput: string = "";
-    let deckNum: number = 0;
-    let cardNum: number = 0;
+    let deckNum: number = 40;
+    let cardNum: number = 1;
+    let nameOfCard: string = "";
     let menu: MenuComponentDev;
-
-    $: if (isNaN(deckInput)) {
-        deckInput = <string>deckNum;
-    } else {
-        deckNum = <number>deckInput;
-    }
 </script>
 
-<div>
-    <Textfield variant="outlined" bind:value={deckInput} label="덱 매수">
-        <HelperText persistent slot="helper">Helper Text</HelperText>
-    </Textfield>
-    <Textfield variant="outlined" label="추가할 카드 이름" />
+<div class="wrapper">
+    <div>
+        <Textfield variant="outlined" bind:value={deckNum} label="덱 매수" style="width: 100%;" suffix="장" input$pattern="\d+" required>
+            <HelperText slot="helper">40 ~ 60장이어야 합니다.</HelperText>
+        </Textfield>
+    </div>
+    <Textfield variant="outlined" bind:value={nameOfCard} label="추가할 카드 이름" />
 
     <Group variant="raised">
-        <Button on:click={() => console.log("추가")} variant="raised">
-            <Label>Do the thing</Label>
+        <Button on:click={() => console.log("추가")} style="height: 56px;" variant="raised">
+            <Label>카드 추가</Label>
         </Button>
         <div use:GroupItem>
-            <Button on:click={() => menu.setOpen(true)} variant="raised" style="padding: 0; min-width: 36px;">
+            <Button on:click={() => menu.setOpen(true)} variant="raised" style="height: 56px; padding: 0; min-width: 30px;">
                 <Icon class="material-icons" style="margin: 0;">arrow_drop_down</Icon>
             </Button>
             <Menu bind:this={menu} anchorCorner="TOP_LEFT">
@@ -47,8 +44,24 @@
             </Menu>
         </div>
     </Group>
-
-    <pre class="status">덱 매수: {deckNum}</pre>
 </div>
 
-<CardList bind:numOfCards={deckNum} />
+<style>
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 8rem;
+    }
+    .wrapper > :global(*) {
+        margin: 7px;
+    }
+    @media (max-width: 599px) {
+        .wrapper {
+            flex-wrap: wrap;
+            margin: 5%;
+        }
+        .wrapper > :global(*) {
+            width: 100%;
+        }
+    }
+</style>
