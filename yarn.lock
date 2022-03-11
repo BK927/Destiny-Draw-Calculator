@@ -68,6 +68,20 @@
     "@material/typography" "^13.0.0"
     tslib "^2.1.0"
 
+"@material/card@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@material/card/-/card-13.0.0.tgz#875d60b398898b6f3a6ff115717f0c144b681bf3"
+  integrity sha512-ooJUOt1Viv99Dyz4rhz9ZZbfa996eHh3RUuXkPRkT66Btd5TzpdqsQWKwOVc5bgbgWqzhDWQ6A/aQdYqH97ccg==
+  dependencies:
+    "@material/dom" "^13.0.0"
+    "@material/elevation" "^13.0.0"
+    "@material/feature-targeting" "^13.0.0"
+    "@material/ripple" "^13.0.0"
+    "@material/rtl" "^13.0.0"
+    "@material/shape" "^13.0.0"
+    "@material/theme" "^13.0.0"
+    tslib "^2.1.0"
+
 "@material/density@^13.0.0":
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/@material/density/-/density-13.0.0.tgz#5ae2fdec0418775014fed24e7ccdd5ba5d005d54"
@@ -346,7 +360,7 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@smui/button@^6.0.0-beta.13":
+"@smui/button@^6.0.0-beta.13", "@smui/button@^6.0.0-beta.15":
   version "6.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@smui/button/-/button-6.0.0-beta.15.tgz#2efc44ca58815221f8ed70d561163862b6ef4ab3"
   integrity sha512-0byc0VyBh5xXLHX8nR9R9/16uaMiNxCkHhm9fcz7Mq761qjxIt34AK8jlDOQQfLCP3/0PLNJjGk2+r+WtTaazA==
@@ -357,6 +371,18 @@
     "@material/ripple" "^13.0.0"
     "@material/theme" "^13.0.0"
     "@smui/common" "^6.0.0-beta.15"
+    "@smui/ripple" "^6.0.0-beta.15"
+    svelte2tsx "^0.4.14"
+
+"@smui/card@^6.0.0-beta.15":
+  version "6.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@smui/card/-/card-6.0.0-beta.15.tgz#6056d128cd0f931cec991adff6d3bd441ccda67a"
+  integrity sha512-AYIXjFNq7G6YHPLGYN4tJc9OGx2jC4hQhTXx/Z2HK68frHhpUCVnhEnKz3GLsthGISIN5IykQRtApRv6SMX8EA==
+  dependencies:
+    "@material/card" "^13.0.0"
+    "@smui/button" "^6.0.0-beta.15"
+    "@smui/common" "^6.0.0-beta.15"
+    "@smui/icon-button" "^6.0.0-beta.15"
     "@smui/ripple" "^6.0.0-beta.15"
     svelte2tsx "^0.4.14"
 
@@ -378,7 +404,7 @@
     "@smui/common" "^6.0.0-beta.15"
     svelte2tsx "^0.4.14"
 
-"@smui/icon-button@^6.0.0-beta.13":
+"@smui/icon-button@^6.0.0-beta.13", "@smui/icon-button@^6.0.0-beta.15":
   version "6.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@smui/icon-button/-/icon-button-6.0.0-beta.15.tgz#34c88f9d3b706cf66bec26c9cf7e4e83cfc369ea"
   integrity sha512-gPeLEpK30zw7lDzM7gzGS0em1+YPqgnJY72dQWaIlIju3jLLECGo44wAx3JZRCfMaIXGHKdtEXCr4XbQ25at3A==
@@ -449,6 +475,19 @@
     "@material/notched-outline" "^13.0.0"
     "@smui/common" "^6.0.0-beta.15"
     "@smui/floating-label" "^6.0.0-beta.15"
+    svelte2tsx "^0.4.14"
+
+"@smui/paper@^6.0.0-beta.15":
+  version "6.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@smui/paper/-/paper-6.0.0-beta.15.tgz#f3ecca1e832c6ee9efabe7aa74900fbbe69bff13"
+  integrity sha512-Y/GsbKx7JpXI6mg5Cc1BsBgCe8tKlKwFMaSLnOjdAc/6pZSgEIlzgnn4NpQm8Av1aNgi0yEgLrxBrB5E8qGgXA==
+  dependencies:
+    "@material/elevation" "^13.0.0"
+    "@material/feature-targeting" "^13.0.0"
+    "@material/shape" "^13.0.0"
+    "@material/theme" "^13.0.0"
+    "@material/typography" "^13.0.0"
+    "@smui/common" "^6.0.0-beta.15"
     svelte2tsx "^0.4.14"
 
 "@smui/ripple@^6.0.0-beta.15":

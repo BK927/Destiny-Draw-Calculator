@@ -4,7 +4,7 @@
     import List, { Item, Separator, Text } from "@smui/list";
     import Textfield from "@smui/textfield";
     import HelperText from "@smui/textfield/helper-text";
-    import CardList from "../components/CardList.svelte";
+    import Combination from "../components/CardCombinations.svelte";
     import { mdiArmFlex } from "@mdi/js";
 
     let deckNum: number = 40;
@@ -45,6 +45,7 @@
         </div>
     </Group>
 </div>
+<Combination />
 
 <style>
     .wrapper {

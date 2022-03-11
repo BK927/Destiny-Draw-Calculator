@@ -3,6 +3,7 @@
     import { tweened } from "svelte/motion";
     import Ripple from "./Ripple.svelte";
     import { writable } from "svelte/store";
+    import IconButton from "@smui/icon-button";
 
     export let rippleBlur = 6,
         speed = 800,
@@ -19,6 +20,11 @@
         shadow = 3,
         shadowHover = 5,
         shadowActive = 2;
+
+    export let maxCardCount;
+    export let cardName;
+
+    let cardCount = 0;
 
     let shadows = {
             none: "none",
@@ -95,26 +101,41 @@
     });
 </script>
 
-<button
-    on:click
-    style="--color: {color};--font-size: {fontSize};--bg-color: {bgColor};--bg-hover: {bgHover};--bg-active: {bgActive};--radius: {round};--ripple: {rippleColor}; width: {width};--shadow: {shadows[
-        shadow
-    ]};--shadow-h: {shadows[shadowHover]};--shadow-a: {shadows[shadowActive]}"
-    bind:this={rippleBtn}
-    on:touchstart={(e) => handleClick(e.touches[0], "touch")}
-    on:mousedown={(e) => handleClick(e, "click")}
->
-    <span>
-        <slot />
-    </span>
-    <svg>
-        {#each $ripples as ripple, index}
-            <Ripple x={ripple.x} y={ripple.y} size={ripple.size} {speed} {sizeIn} {opacityIn} {rippleBlur} />
-        {/each}
-    </svg>
-</button>
+<div class="wrapper">
+    <p>{cardName}</p>
+    <button
+        on:click
+        style="--color: {color};--font-size: {fontSize};--bg-color: {bgColor};--bg-hover: {bgHover};--bg-active: {bgActive};--radius: {round};--ripple: {rippleColor}; width: {width};--shadow: {shadows[
+            shadow
+        ]};--shadow-h: {shadows[shadowHover]};--shadow-a: {shadows[shadowActive]}"
+        bind:this={rippleBtn}
+        on:touchstart={(e) => handleClick(e.touches[0], "touch")}
+        on:mousedown={(e) => handleClick(e, "click")}
+    >
+        <span>
+            <slot />
+        </span>
+        <svg>
+            {#each $ripples as ripple, index}
+                <Ripple x={ripple.x} y={ripple.y} size={ripple.size} {speed} {sizeIn} {opacityIn} {rippleBlur} />
+            {/each}
+        </svg>
+    </button>
+    <div style="display:flex; justify-content: center; ">
+        <IconButton class="material-icons" on:click={() => (cardCount < maxCardCount ? cardCount++ : null)}>add</IconButton>
+        <p>{cardCount}</p>
+        <IconButton class="material-icons" on:click={() => (cardCount > 0 ? cardCount-- : null)}>remove</IconButton>
+    </div>
+</div>
 
 <style>
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: min-content;
+    }
+
     button {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -147,7 +168,7 @@
         display: flex;
         min-width: 100px;
         aspect-ratio: 63/88;
-        background-image: url("/src/assets/images/anime_card.jpg");
+        background-image: url("/src/assets/images/anime_card2.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
