@@ -3,7 +3,7 @@ export const manifest = {
 	assets: new Set(["favicon.png","smui-dark.css","smui.css"]),
 	_: {
 		mime: {".png":"image/png",".css":"text/css"},
-		entry: {"file":"start-dc1ceacc.js","js":["start-dc1ceacc.js","chunks/vendor-c9a5fe65.js"],"css":[]},
+		entry: {"file":"start-ed0944fc.js","js":["start-ed0944fc.js","chunks/vendor-c9a5fe65.js"],"css":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
