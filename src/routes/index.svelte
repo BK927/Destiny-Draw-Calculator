@@ -6,12 +6,17 @@
     import HelperText from "@smui/textfield/helper-text";
     import Combination from "../components/CardCombinations.svelte";
     import { mdiArmFlex } from "@mdi/js";
+    import Paper from "@smui/paper/src/Paper.svelte";
 
     let deckNum: number = 40;
     let cardNum: number = 1;
     let nameOfCard: string = "";
     let menu: MenuComponentDev;
     let cardArr = [];
+
+    function addCard() {
+        cardArr = cardArr.concat({ name: nameOfCard, count: cardNum });
+    }
 </script>
 
 <div class="wrapper">
@@ -20,10 +25,10 @@
             <HelperText slot="helper">40 ~ 60장이어야 합니다.</HelperText>
         </Textfield>
     </div>
-    <Textfield variant="outlined" bind:value={nameOfCard} label="추가할 카드 이름" />
+    <Textfield variant="outlined" bind:value={nameOfCard} label="추가할 카드 이름" on:keypress={(event) => (event.key === "Enter" ? addCard() : null)} />
 
     <Group variant="raised">
-        <Button on:click={() => (cardArr = cardArr.concat({ name: nameOfCard, count: cardNum }))} style="height: 56px;" variant="raised">
+        <Button on:click={addCard} style="height: 56px;" variant="raised">
             <Label>카드 추가</Label>
         </Button>
         <div use:GroupItem>

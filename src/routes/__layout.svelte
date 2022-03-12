@@ -50,6 +50,10 @@
 </AutoAdjust>
 
 <style>
+    :global(html, body) {
+        width: 100%;
+        max-width: 100%;
+    }
     :global(.transparent-bar) {
         background-color: transparent;
     }
