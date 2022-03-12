@@ -102,7 +102,8 @@
 </script>
 
 <div class="wrapper">
-    <p>{cardName}</p>
+    <p style="text-align: center; width: 100%; height:min-content; overflow: hidden; text-overflow: ellipsis; margin: 0;">{cardName}</p>
+    <pre style="text-align: center; height:min-content; margin 1px 0;">(투입: {maxCardCount}장)</pre>
     <button
         on:click
         style="--color: {color};--font-size: {fontSize};--bg-color: {bgColor};--bg-hover: {bgHover};--bg-active: {bgActive};--radius: {round};--ripple: {rippleColor}; width: {width};--shadow: {shadows[
@@ -121,7 +122,7 @@
             {/each}
         </svg>
     </button>
-    <div style="display:flex; justify-content: center; ">
+    <div style="display:flex; align-items: center;">
         <IconButton class="material-icons" on:click={() => (cardCount < maxCardCount ? cardCount++ : null)}>add</IconButton>
         <p>{cardCount}</p>
         <IconButton class="material-icons" on:click={() => (cardCount > 0 ? cardCount-- : null)}>remove</IconButton>
@@ -133,7 +134,10 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: min-content;
+        min-width: 100px;
+        width: 7vw;
+        height: 100%;
+        margin: 20px 5px;
     }
 
     button {

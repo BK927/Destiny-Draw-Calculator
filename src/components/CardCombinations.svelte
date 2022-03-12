@@ -24,4 +24,8 @@
 {/if}
 
 <style>
+    .card-container {
+        display: flex;
+        align-items: flex-end;
+    }
 </style>
