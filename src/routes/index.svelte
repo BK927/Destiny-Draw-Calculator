@@ -11,6 +11,7 @@
     let cardNum: number = 1;
     let nameOfCard: string = "";
     let menu: MenuComponentDev;
+    let cardArr = [];
 </script>
 
 <div class="wrapper">
@@ -22,7 +23,7 @@
     <Textfield variant="outlined" bind:value={nameOfCard} label="추가할 카드 이름" />
 
     <Group variant="raised">
-        <Button on:click={() => console.log("추가")} style="height: 56px;" variant="raised">
+        <Button on:click={() => cardArr.push({ name: nameOfCard, count: cardNum })} style="height: 56px;" variant="raised">
             <Label>카드 추가</Label>
         </Button>
         <div use:GroupItem>
@@ -45,7 +46,7 @@
         </div>
     </Group>
 </div>
-<Combination />
+<Combination bind:cards={cardArr} />
 
 <style>
     .wrapper {

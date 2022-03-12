@@ -6,7 +6,7 @@
 
     let clicked = 0;
 
-    export let cards = [{ name: "테스트", count: 3 }];
+    export let cards = [];
 </script>
 
 {#each cards as card, i}
