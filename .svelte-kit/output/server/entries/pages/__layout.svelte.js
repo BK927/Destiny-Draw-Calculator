@@ -656,7 +656,7 @@ const Section = Section$1;
 const AutoAdjust = AutoAdjust$1;
 var __layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: "html, body{width:100%;max-width:100%}.transparent-bar{background-color:transparent}",
+  code: "html, body{width:100%;max-width:100%;min-height:100%}html{height:100%}.transparent-bar{background-color:transparent}",
   map: null
 };
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {

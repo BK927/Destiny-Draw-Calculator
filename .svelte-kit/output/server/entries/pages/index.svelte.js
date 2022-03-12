@@ -1814,7 +1814,7 @@ const CardButton = create_ssr_component(($$result, $$props, $$bindings, slots) =
     variant: "raised"
   }, {}, {
     default: () => {
-      return `<img style="${"width: 100%;"}" src="${"/src/assets/images/anime_card2.jpg"}" alt="${"\uC720\uD76C\uC655 \uCE74\uB4DC"}">`;
+      return `<img style="${"width: 100%;"}" src="${"/images/anime_card2.jpg"}" alt="${"\uC720\uD76C\uC655 \uCE74\uB4DC"}">`;
     }
   })}
     <div style="${"display:flex; align-items: center;"}">${validate_component(IconButton, "IconButton").$$render($$result, { class: "material-icons" }, {}, {
@@ -1886,7 +1886,7 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       label: "\uB371 \uB9E4\uC218",
       style: "width: 100%;",
       suffix: "\uC7A5",
-      input$pattern: "\\d+",
+      input$pattern: "\\[0-9]",
       required: true,
       value: deckNum
     }, {

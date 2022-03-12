@@ -53,6 +53,10 @@
     :global(html, body) {
         width: 100%;
         max-width: 100%;
+        min-height: 100%;
+    }
+    :global(html) {
+        height: 100%;
     }
     :global(.transparent-bar) {
         background-color: transparent;
