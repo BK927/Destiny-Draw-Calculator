@@ -23,7 +23,7 @@
     <Textfield variant="outlined" bind:value={nameOfCard} label="추가할 카드 이름" />
 
     <Group variant="raised">
-        <Button on:click={() => cardArr.push({ name: nameOfCard, count: cardNum })} style="height: 56px;" variant="raised">
+        <Button on:click={() => (cardArr = cardArr.concat({ name: nameOfCard, count: cardNum }))} style="height: 56px;" variant="raised">
             <Label>카드 추가</Label>
         </Button>
         <div use:GroupItem>

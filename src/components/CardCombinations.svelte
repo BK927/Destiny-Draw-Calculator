@@ -7,18 +7,21 @@
     let clicked = 0;
 
     export let cards = [];
+    let numOfCombinations;
 </script>
 
-{#each cards as card, i}
+{#if cards.length > 0}
     <Paper>
-        <Title>조합 {i + 1}</Title>
+        <Title>조합 1</Title>
         <Content>
             <div class="card-container">
-                <Card cardName={card.name} maxCardCount={card.count} />
+                {#each cards as card, i}
+                    <Card cardName={card.name} maxCardCount={card.count} />
+                {/each}
             </div>
         </Content>
     </Paper>
-{/each}
+{/if}
 
 <style>
 </style>
