@@ -17,7 +17,7 @@ var __privateSet = (obj, member, value, setter) => {
   return value;
 };
 var _use_hashes, _dev, _script_needs_csp, _style_needs_csp, _directives, _script_src, _style_src;
-import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./chunks/index-08f8d540.js";
+import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./chunks/index-c9907ad8.js";
 function afterUpdate() {
 }
 const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -1929,7 +1929,7 @@ function set_prerendering(value) {
 var user_hooks = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null
 }, Symbol.toStringTag, { value: "Module" }));
-const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\r\n<html lang="ko">\r\n    <head>\r\n        <meta charset="utf-8" />\r\n        <meta name="description" content="" />\r\n        <link rel="icon" href="' + assets2 + '/favicon.png" />\r\n        <meta name="viewport" content="width=device-width, initial-scale=1" />\r\n\r\n        <!-- Fonts -->\r\n        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />\r\n        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" />\r\n        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />\r\n\r\n        <!-- SMUI Styles -->\r\n        <link rel="stylesheet" href="/smui.css" media="(prefers-color-scheme: light)" />\r\n        <link rel="stylesheet" href="/smui-dark.css" media="screen and (prefers-color-scheme: dark)" />\r\n\r\n        ' + head + "\r\n    </head>\r\n    <body>\r\n        <div>" + body + "</div>\r\n    </body>\r\n</html>\r\n";
+const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="ko">\n    <head>\n        <meta charset="utf-8" />\n        <meta name="description" content="" />\n        <link rel="icon" href="' + assets2 + '/favicon.png" />\n        <meta name="viewport" content="width=device-width, initial-scale=1" />\n\n        <!-- Fonts -->\n        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />\n        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" />\n        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />\n\n        <!-- SMUI Styles -->\n        <!-- <link rel="stylesheet" href="/smui.css" media="(prefers-color-scheme: light)" />\n        <link rel="stylesheet" href="/smui-dark.css" media="screen and (prefers-color-scheme: dark)" /> -->\n        <link rel="stylesheet" href="/smui-dark.css" />\n\n        ' + head + "\n    </head>\n    <body>\n        <div>" + body + "</div>\n    </body>\n</html>\n";
 let read = null;
 set_paths({ "base": "", "assets": "" });
 const get_hooks = (hooks) => ({

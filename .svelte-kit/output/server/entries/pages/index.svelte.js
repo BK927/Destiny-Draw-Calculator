@@ -1,5 +1,7 @@
-import { c as create_ssr_component, i as subscribe, s as setContext, o as onDestroy, u as set_store_value, a as compute_rest_props, b as get_current_component, g as getContext, d as spread, e as escape_attribute_value, f as escape_object, h as add_attribute, w as compute_slots, v as validate_component, t as escape, j as globals, x as each } from "../../chunks/index-08f8d540.js";
-import { w as writable, f as forwardEventsBuilder, c as classMap, a as classAdderBuilder, D as Div, S as Span, L as Li, d as Img, e as Label } from "../../chunks/classAdderBuilder-a4bdc30b.js";
+import { c as create_ssr_component, a as compute_rest_props, g as get_current_component, k as getContext, s as setContext, v as validate_component, m as missing_component, r as globals, b as spread, e as escape_attribute_value, d as escape_object, f as add_attribute, h as subscribe, q as onDestroy, u as set_store_value, w as compute_slots, t as escape, x as each } from "../../chunks/index-c9907ad8.js";
+import { f as forwardEventsBuilder, R as Ripple, c as classMap, B as Button, A, w as writable, N as Nav, U as Ul, S as Span, L as Li, d as dispatch, a as classAdderBuilder, D as Div, H as H3, h as H5, i as H6, I as IconButton, j as Label, e as Icon } from "../../chunks/IconButton-66bf42a7.js";
+import "@mdi/js";
+import "tslib";
 function exclude(obj, keys) {
   let names = Object.getOwnPropertyNames(obj);
   const newObj = {};
@@ -27,6 +29,191 @@ function prefixFilter(obj, prefix) {
   }
   return newObj;
 }
+const { Object: Object_1$2 } = globals;
+const Button_1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let actionProp;
+  let defaultProp;
+  let secondaryProp;
+  let $$restProps = compute_rest_props($$props, [
+    "use",
+    "class",
+    "style",
+    "ripple",
+    "color",
+    "variant",
+    "touch",
+    "href",
+    "action",
+    "defaultAction",
+    "secondary",
+    "component",
+    "getElement"
+  ]);
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { ripple = true } = $$props;
+  let { color = "primary" } = $$props;
+  let { variant = "text" } = $$props;
+  let { touch = false } = $$props;
+  let { href = void 0 } = $$props;
+  let { action = "close" } = $$props;
+  let { defaultAction = false } = $$props;
+  let { secondary = false } = $$props;
+  let element;
+  let internalClasses = {};
+  let internalStyles = {};
+  let context = getContext("SMUI:button:context");
+  let { component = href == null ? Button : A } = $$props;
+  let previousDisabled = $$restProps.disabled;
+  setContext("SMUI:label:context", "button");
+  setContext("SMUI:icon:context", "button");
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      internalClasses[className2] = true;
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      internalClasses[className2] = false;
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        internalStyles = internalStyles;
+      } else {
+        internalStyles[name] = value;
+      }
+    }
+  }
+  function getElement() {
+    return element.getElement();
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.style === void 0 && $$bindings.style && style !== void 0)
+    $$bindings.style(style);
+  if ($$props.ripple === void 0 && $$bindings.ripple && ripple !== void 0)
+    $$bindings.ripple(ripple);
+  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
+    $$bindings.color(color);
+  if ($$props.variant === void 0 && $$bindings.variant && variant !== void 0)
+    $$bindings.variant(variant);
+  if ($$props.touch === void 0 && $$bindings.touch && touch !== void 0)
+    $$bindings.touch(touch);
+  if ($$props.href === void 0 && $$bindings.href && href !== void 0)
+    $$bindings.href(href);
+  if ($$props.action === void 0 && $$bindings.action && action !== void 0)
+    $$bindings.action(action);
+  if ($$props.defaultAction === void 0 && $$bindings.defaultAction && defaultAction !== void 0)
+    $$bindings.defaultAction(defaultAction);
+  if ($$props.secondary === void 0 && $$bindings.secondary && secondary !== void 0)
+    $$bindings.secondary(secondary);
+  if ($$props.component === void 0 && $$bindings.component && component !== void 0)
+    $$bindings.component(component);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  let $$settled;
+  let $$rendered;
+  do {
+    $$settled = true;
+    actionProp = context === "dialog:action" && action != null ? { "data-mdc-dialog-action": action } : { action: $$props.action };
+    defaultProp = context === "dialog:action" && defaultAction ? { "data-mdc-dialog-button-default": "" } : { default: $$props.default };
+    secondaryProp = context === "banner" ? {} : { secondary: $$props.secondary };
+    {
+      if (previousDisabled !== $$restProps.disabled) {
+        getElement().blur();
+        previousDisabled = $$restProps.disabled;
+      }
+    }
+    $$rendered = `${validate_component(component || missing_component, "svelte:component").$$render($$result, Object_1$2.assign({
+      use: [
+        [
+          Ripple,
+          {
+            ripple,
+            unbounded: false,
+            color,
+            disabled: !!$$restProps.disabled,
+            addClass,
+            removeClass,
+            addStyle
+          }
+        ],
+        forwardEvents,
+        ...use
+      ]
+    }, {
+      class: classMap({
+        [className]: true,
+        "mdc-button": true,
+        "mdc-button--raised": variant === "raised",
+        "mdc-button--unelevated": variant === "unelevated",
+        "mdc-button--outlined": variant === "outlined",
+        "smui-button--color-secondary": color === "secondary",
+        "mdc-button--touch": touch,
+        "mdc-card__action": context === "card:action",
+        "mdc-card__action--button": context === "card:action",
+        "mdc-dialog__button": context === "dialog:action",
+        "mdc-top-app-bar__navigation-icon": context === "top-app-bar:navigation",
+        "mdc-top-app-bar__action-item": context === "top-app-bar:action",
+        "mdc-snackbar__action": context === "snackbar:actions",
+        "mdc-banner__secondary-action": context === "banner" && secondary,
+        "mdc-banner__primary-action": context === "banner" && !secondary,
+        "mdc-tooltip__action": context === "tooltip:rich-actions",
+        ...internalClasses
+      })
+    }, {
+      style: Object.entries(internalStyles).map(([name, value]) => `${name}: ${value};`).concat([style]).join(" ")
+    }, actionProp, defaultProp, secondaryProp, { href }, $$restProps, { this: element }), {
+      this: ($$value) => {
+        element = $$value;
+        $$settled = false;
+      }
+    }, {
+      default: () => {
+        return `<div class="${"mdc-button__ripple"}"></div>
+  ${slots.default ? slots.default({}) : ``}${touch ? `<div class="${"mdc-button__touch"}"></div>` : ``}`;
+      }
+    })}`;
+  } while (!$$settled);
+  return $$rendered;
+});
+const Group$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["use", "class", "variant", "getElement"]);
+  forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { variant = "text" } = $$props;
+  let element;
+  function getElement() {
+    return element;
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.variant === void 0 && $$bindings.variant && variant !== void 0)
+    $$bindings.variant(variant);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  return `<div${spread([
+    {
+      class: escape_attribute_value(classMap({
+        [className]: true,
+        "smui-button__group": true,
+        "smui-button__group--raised": variant === "raised"
+      }))
+    },
+    escape_object($$restProps)
+  ], {})}${add_attribute("this", element, 0)}>${slots.default ? slots.default({}) : ``}
+</div>`;
+});
 const ContextFragment = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $storeValue, $$unsubscribe_storeValue;
   let { key } = $$props;
@@ -44,6 +231,644 @@ const ContextFragment = create_ssr_component(($$result, $$props, $$bindings, slo
   set_store_value(storeValue, $storeValue = value, $storeValue);
   $$unsubscribe_storeValue();
   return `${slots.default ? slots.default({}) : ``}`;
+});
+const Group = Group$1;
+const MenuSurface = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, [
+    "use",
+    "class",
+    "style",
+    "static",
+    "anchor",
+    "fixed",
+    "open",
+    "managed",
+    "fullWidth",
+    "quickOpen",
+    "anchorElement",
+    "anchorCorner",
+    "anchorMargin",
+    "maxHeight",
+    "horizontallyCenteredOnViewport",
+    "isOpen",
+    "setOpen",
+    "setAbsolutePosition",
+    "setIsHoisted",
+    "isFixed",
+    "getElement"
+  ]);
+  forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { static: isStatic = false } = $$props;
+  let { anchor = true } = $$props;
+  let { fixed = false } = $$props;
+  let { open = isStatic } = $$props;
+  let { managed = false } = $$props;
+  let { fullWidth = false } = $$props;
+  let { quickOpen = false } = $$props;
+  let { anchorElement = void 0 } = $$props;
+  let { anchorCorner = void 0 } = $$props;
+  let { anchorMargin = { top: 0, right: 0, bottom: 0, left: 0 } } = $$props;
+  let { maxHeight = 0 } = $$props;
+  let { horizontallyCenteredOnViewport = false } = $$props;
+  let element;
+  let instance;
+  let internalClasses = {};
+  let internalStyles = {};
+  setContext("SMUI:list:role", "menu");
+  setContext("SMUI:list:item:role", "menuitem");
+  onDestroy(() => {
+  });
+  function isOpen() {
+    return open;
+  }
+  function setOpen(value) {
+    open = value;
+  }
+  function setAbsolutePosition(x, y) {
+    return instance.setAbsolutePosition(x, y);
+  }
+  function setIsHoisted(isHoisted) {
+    return instance.setIsHoisted(isHoisted);
+  }
+  function isFixed() {
+    return instance.isFixed();
+  }
+  function getElement() {
+    return element;
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.style === void 0 && $$bindings.style && style !== void 0)
+    $$bindings.style(style);
+  if ($$props.static === void 0 && $$bindings.static && isStatic !== void 0)
+    $$bindings.static(isStatic);
+  if ($$props.anchor === void 0 && $$bindings.anchor && anchor !== void 0)
+    $$bindings.anchor(anchor);
+  if ($$props.fixed === void 0 && $$bindings.fixed && fixed !== void 0)
+    $$bindings.fixed(fixed);
+  if ($$props.open === void 0 && $$bindings.open && open !== void 0)
+    $$bindings.open(open);
+  if ($$props.managed === void 0 && $$bindings.managed && managed !== void 0)
+    $$bindings.managed(managed);
+  if ($$props.fullWidth === void 0 && $$bindings.fullWidth && fullWidth !== void 0)
+    $$bindings.fullWidth(fullWidth);
+  if ($$props.quickOpen === void 0 && $$bindings.quickOpen && quickOpen !== void 0)
+    $$bindings.quickOpen(quickOpen);
+  if ($$props.anchorElement === void 0 && $$bindings.anchorElement && anchorElement !== void 0)
+    $$bindings.anchorElement(anchorElement);
+  if ($$props.anchorCorner === void 0 && $$bindings.anchorCorner && anchorCorner !== void 0)
+    $$bindings.anchorCorner(anchorCorner);
+  if ($$props.anchorMargin === void 0 && $$bindings.anchorMargin && anchorMargin !== void 0)
+    $$bindings.anchorMargin(anchorMargin);
+  if ($$props.maxHeight === void 0 && $$bindings.maxHeight && maxHeight !== void 0)
+    $$bindings.maxHeight(maxHeight);
+  if ($$props.horizontallyCenteredOnViewport === void 0 && $$bindings.horizontallyCenteredOnViewport && horizontallyCenteredOnViewport !== void 0)
+    $$bindings.horizontallyCenteredOnViewport(horizontallyCenteredOnViewport);
+  if ($$props.isOpen === void 0 && $$bindings.isOpen && isOpen !== void 0)
+    $$bindings.isOpen(isOpen);
+  if ($$props.setOpen === void 0 && $$bindings.setOpen && setOpen !== void 0)
+    $$bindings.setOpen(setOpen);
+  if ($$props.setAbsolutePosition === void 0 && $$bindings.setAbsolutePosition && setAbsolutePosition !== void 0)
+    $$bindings.setAbsolutePosition(setAbsolutePosition);
+  if ($$props.setIsHoisted === void 0 && $$bindings.setIsHoisted && setIsHoisted !== void 0)
+    $$bindings.setIsHoisted(setIsHoisted);
+  if ($$props.isFixed === void 0 && $$bindings.isFixed && isFixed !== void 0)
+    $$bindings.isFixed(isFixed);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  return `
+
+<div${spread([
+    {
+      class: escape_attribute_value(classMap({
+        [className]: true,
+        "mdc-menu-surface": true,
+        "mdc-menu-surface--fixed": fixed,
+        "mdc-menu-surface--open": isStatic,
+        "smui-menu-surface--static": isStatic,
+        "mdc-menu-surface--fullwidth": fullWidth,
+        ...internalClasses
+      }))
+    },
+    {
+      style: escape_attribute_value(Object.entries(internalStyles).map(([name, value]) => `${name}: ${value};`).concat([style]).join(" "))
+    },
+    escape_object($$restProps)
+  ], {})}${add_attribute("this", element, 0)}>${slots.default ? slots.default({}) : ``}
+</div>`;
+});
+const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let usePass;
+  let $$restProps = compute_rest_props($$props, [
+    "use",
+    "class",
+    "open",
+    "isOpen",
+    "setOpen",
+    "setDefaultFocusState",
+    "getSelectedIndex",
+    "getElement"
+  ]);
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { open = false } = $$props;
+  let element;
+  let instance;
+  function isOpen() {
+    return open;
+  }
+  function setOpen(value) {
+    open = value;
+  }
+  function setDefaultFocusState(focusState) {
+    instance.setDefaultFocusState(focusState);
+  }
+  function getSelectedIndex() {
+    return instance.getSelectedIndex();
+  }
+  function getElement() {
+    return element.getElement();
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.open === void 0 && $$bindings.open && open !== void 0)
+    $$bindings.open(open);
+  if ($$props.isOpen === void 0 && $$bindings.isOpen && isOpen !== void 0)
+    $$bindings.isOpen(isOpen);
+  if ($$props.setOpen === void 0 && $$bindings.setOpen && setOpen !== void 0)
+    $$bindings.setOpen(setOpen);
+  if ($$props.setDefaultFocusState === void 0 && $$bindings.setDefaultFocusState && setDefaultFocusState !== void 0)
+    $$bindings.setDefaultFocusState(setDefaultFocusState);
+  if ($$props.getSelectedIndex === void 0 && $$bindings.getSelectedIndex && getSelectedIndex !== void 0)
+    $$bindings.getSelectedIndex(getSelectedIndex);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  let $$settled;
+  let $$rendered;
+  do {
+    $$settled = true;
+    usePass = [forwardEvents, ...use];
+    $$rendered = `${validate_component(MenuSurface, "MenuSurface").$$render($$result, Object.assign({ use: usePass }, {
+      class: classMap({ [className]: true, "mdc-menu": true })
+    }, $$restProps, { this: element }, { open }), {
+      this: ($$value) => {
+        element = $$value;
+        $$settled = false;
+      },
+      open: ($$value) => {
+        open = $$value;
+        $$settled = false;
+      }
+    }, {
+      default: () => {
+        return `${slots.default ? slots.default({}) : ``}`;
+      }
+    })}`;
+  } while (!$$settled);
+  return $$rendered;
+});
+const List = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, [
+    "use",
+    "class",
+    "nonInteractive",
+    "dense",
+    "textualList",
+    "avatarList",
+    "iconList",
+    "imageList",
+    "thumbnailList",
+    "videoList",
+    "twoLine",
+    "threeLine",
+    "vertical",
+    "wrapFocus",
+    "singleSelection",
+    "selectedIndex",
+    "radioList",
+    "checkList",
+    "hasTypeahead",
+    "component",
+    "layout",
+    "setEnabled",
+    "getTypeaheadInProgress",
+    "getSelectedIndex",
+    "getFocusedItemIndex",
+    "getElement"
+  ]);
+  var _a;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { nonInteractive = false } = $$props;
+  let { dense = false } = $$props;
+  let { textualList = false } = $$props;
+  let { avatarList = false } = $$props;
+  let { iconList = false } = $$props;
+  let { imageList = false } = $$props;
+  let { thumbnailList = false } = $$props;
+  let { videoList = false } = $$props;
+  let { twoLine = false } = $$props;
+  let { threeLine = false } = $$props;
+  let { vertical = true } = $$props;
+  let { wrapFocus = (_a = getContext("SMUI:list:wrapFocus")) !== null && _a !== void 0 ? _a : false } = $$props;
+  let { singleSelection = false } = $$props;
+  let { selectedIndex = -1 } = $$props;
+  let { radioList = false } = $$props;
+  let { checkList = false } = $$props;
+  let { hasTypeahead = false } = $$props;
+  let element;
+  let instance;
+  let role = getContext("SMUI:list:role");
+  let nav = getContext("SMUI:list:nav");
+  let selectionDialog = getContext("SMUI:dialog:selection");
+  let addLayoutListener = getContext("SMUI:addLayoutListener");
+  let removeLayoutListener;
+  let { component = nav ? Nav : Ul } = $$props;
+  setContext("SMUI:list:nonInteractive", nonInteractive);
+  setContext("SMUI:separator:context", "list");
+  if (!role) {
+    if (singleSelection) {
+      role = "listbox";
+      setContext("SMUI:list:item:role", "option");
+    } else if (radioList) {
+      role = "radiogroup";
+      setContext("SMUI:list:item:role", "radio");
+    } else if (checkList) {
+      role = "group";
+      setContext("SMUI:list:item:role", "checkbox");
+    } else {
+      role = "list";
+      setContext("SMUI:list:item:role", void 0);
+    }
+  }
+  if (addLayoutListener) {
+    removeLayoutListener = addLayoutListener(layout);
+  }
+  onDestroy(() => {
+    if (removeLayoutListener) {
+      removeLayoutListener();
+    }
+  });
+  function layout() {
+    return instance.layout();
+  }
+  function setEnabled(itemIndex, isEnabled) {
+    return instance.setEnabled(itemIndex, isEnabled);
+  }
+  function getTypeaheadInProgress() {
+    return instance.isTypeaheadInProgress();
+  }
+  function getSelectedIndex() {
+    return instance.getSelectedIndex();
+  }
+  function getFocusedItemIndex() {
+    return instance.getFocusedItemIndex();
+  }
+  function getElement() {
+    return element.getElement();
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.nonInteractive === void 0 && $$bindings.nonInteractive && nonInteractive !== void 0)
+    $$bindings.nonInteractive(nonInteractive);
+  if ($$props.dense === void 0 && $$bindings.dense && dense !== void 0)
+    $$bindings.dense(dense);
+  if ($$props.textualList === void 0 && $$bindings.textualList && textualList !== void 0)
+    $$bindings.textualList(textualList);
+  if ($$props.avatarList === void 0 && $$bindings.avatarList && avatarList !== void 0)
+    $$bindings.avatarList(avatarList);
+  if ($$props.iconList === void 0 && $$bindings.iconList && iconList !== void 0)
+    $$bindings.iconList(iconList);
+  if ($$props.imageList === void 0 && $$bindings.imageList && imageList !== void 0)
+    $$bindings.imageList(imageList);
+  if ($$props.thumbnailList === void 0 && $$bindings.thumbnailList && thumbnailList !== void 0)
+    $$bindings.thumbnailList(thumbnailList);
+  if ($$props.videoList === void 0 && $$bindings.videoList && videoList !== void 0)
+    $$bindings.videoList(videoList);
+  if ($$props.twoLine === void 0 && $$bindings.twoLine && twoLine !== void 0)
+    $$bindings.twoLine(twoLine);
+  if ($$props.threeLine === void 0 && $$bindings.threeLine && threeLine !== void 0)
+    $$bindings.threeLine(threeLine);
+  if ($$props.vertical === void 0 && $$bindings.vertical && vertical !== void 0)
+    $$bindings.vertical(vertical);
+  if ($$props.wrapFocus === void 0 && $$bindings.wrapFocus && wrapFocus !== void 0)
+    $$bindings.wrapFocus(wrapFocus);
+  if ($$props.singleSelection === void 0 && $$bindings.singleSelection && singleSelection !== void 0)
+    $$bindings.singleSelection(singleSelection);
+  if ($$props.selectedIndex === void 0 && $$bindings.selectedIndex && selectedIndex !== void 0)
+    $$bindings.selectedIndex(selectedIndex);
+  if ($$props.radioList === void 0 && $$bindings.radioList && radioList !== void 0)
+    $$bindings.radioList(radioList);
+  if ($$props.checkList === void 0 && $$bindings.checkList && checkList !== void 0)
+    $$bindings.checkList(checkList);
+  if ($$props.hasTypeahead === void 0 && $$bindings.hasTypeahead && hasTypeahead !== void 0)
+    $$bindings.hasTypeahead(hasTypeahead);
+  if ($$props.component === void 0 && $$bindings.component && component !== void 0)
+    $$bindings.component(component);
+  if ($$props.layout === void 0 && $$bindings.layout && layout !== void 0)
+    $$bindings.layout(layout);
+  if ($$props.setEnabled === void 0 && $$bindings.setEnabled && setEnabled !== void 0)
+    $$bindings.setEnabled(setEnabled);
+  if ($$props.getTypeaheadInProgress === void 0 && $$bindings.getTypeaheadInProgress && getTypeaheadInProgress !== void 0)
+    $$bindings.getTypeaheadInProgress(getTypeaheadInProgress);
+  if ($$props.getSelectedIndex === void 0 && $$bindings.getSelectedIndex && getSelectedIndex !== void 0)
+    $$bindings.getSelectedIndex(getSelectedIndex);
+  if ($$props.getFocusedItemIndex === void 0 && $$bindings.getFocusedItemIndex && getFocusedItemIndex !== void 0)
+    $$bindings.getFocusedItemIndex(getFocusedItemIndex);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  let $$settled;
+  let $$rendered;
+  do {
+    $$settled = true;
+    $$rendered = `${validate_component(component || missing_component, "svelte:component").$$render($$result, Object.assign({ use: [forwardEvents, ...use] }, {
+      class: classMap({
+        [className]: true,
+        "mdc-deprecated-list": true,
+        "mdc-deprecated-list--non-interactive": nonInteractive,
+        "mdc-deprecated-list--dense": dense,
+        "mdc-deprecated-list--textual-list": textualList,
+        "mdc-deprecated-list--avatar-list": avatarList || selectionDialog,
+        "mdc-deprecated-list--icon-list": iconList,
+        "mdc-deprecated-list--image-list": imageList,
+        "mdc-deprecated-list--thumbnail-list": thumbnailList,
+        "mdc-deprecated-list--video-list": videoList,
+        "mdc-deprecated-list--two-line": twoLine,
+        "smui-list--three-line": threeLine && !twoLine
+      })
+    }, { role }, $$restProps, { this: element }), {
+      this: ($$value) => {
+        element = $$value;
+        $$settled = false;
+      }
+    }, {
+      default: () => {
+        return `${slots.default ? slots.default({}) : ``}`;
+      }
+    })}`;
+  } while (!$$settled);
+  return $$rendered;
+});
+const { Object: Object_1$1 } = globals;
+let counter$1 = 0;
+const Item$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let tabindex;
+  let $$restProps = compute_rest_props($$props, [
+    "use",
+    "class",
+    "style",
+    "color",
+    "nonInteractive",
+    "ripple",
+    "activated",
+    "role",
+    "selected",
+    "disabled",
+    "skipRestoreFocus",
+    "tabindex",
+    "inputId",
+    "href",
+    "component",
+    "action",
+    "getPrimaryText",
+    "getElement"
+  ]);
+  var _a;
+  const forwardEvents = forwardEventsBuilder(get_current_component());
+  let uninitializedValue = () => {
+  };
+  function isUninitializedValue(value) {
+    return value === uninitializedValue;
+  }
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let { style = "" } = $$props;
+  let { color = void 0 } = $$props;
+  let { nonInteractive = (_a = getContext("SMUI:list:nonInteractive")) !== null && _a !== void 0 ? _a : false } = $$props;
+  setContext("SMUI:list:nonInteractive", void 0);
+  let { ripple = !nonInteractive } = $$props;
+  let { activated = false } = $$props;
+  let { role = getContext("SMUI:list:item:role") } = $$props;
+  setContext("SMUI:list:item:role", void 0);
+  let { selected = false } = $$props;
+  let { disabled = false } = $$props;
+  let { skipRestoreFocus = false } = $$props;
+  let { tabindex: tabindexProp = uninitializedValue } = $$props;
+  let { inputId = "SMUI-form-field-list-" + counter$1++ } = $$props;
+  let { href = void 0 } = $$props;
+  let element;
+  let internalClasses = {};
+  let internalStyles = {};
+  let internalAttrs = {};
+  let input;
+  let nav = getContext("SMUI:list:item:nav");
+  let { component = nav ? href ? A : Span : Li } = $$props;
+  setContext("SMUI:generic:input:props", { id: inputId });
+  setContext("SMUI:separator:context", void 0);
+  onDestroy(() => {
+  });
+  function addClass(className2) {
+    if (!internalClasses[className2]) {
+      internalClasses[className2] = true;
+    }
+  }
+  function removeClass(className2) {
+    if (!(className2 in internalClasses) || internalClasses[className2]) {
+      internalClasses[className2] = false;
+    }
+  }
+  function addStyle(name, value) {
+    if (internalStyles[name] != value) {
+      if (value === "" || value == null) {
+        delete internalStyles[name];
+        internalStyles = internalStyles;
+      } else {
+        internalStyles[name] = value;
+      }
+    }
+  }
+  function action(e) {
+    if (!disabled) {
+      dispatch(getElement(), "SMUI:action", e);
+    }
+  }
+  function getPrimaryText() {
+    var _a2, _b, _c;
+    const element2 = getElement();
+    const primaryText = element2.querySelector(".mdc-deprecated-list-item__primary-text");
+    if (primaryText) {
+      return (_a2 = primaryText.textContent) !== null && _a2 !== void 0 ? _a2 : "";
+    }
+    const text = element2.querySelector(".mdc-deprecated-list-item__text");
+    if (text) {
+      return (_b = text.textContent) !== null && _b !== void 0 ? _b : "";
+    }
+    return (_c = element2.textContent) !== null && _c !== void 0 ? _c : "";
+  }
+  function getElement() {
+    return element.getElement();
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.style === void 0 && $$bindings.style && style !== void 0)
+    $$bindings.style(style);
+  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
+    $$bindings.color(color);
+  if ($$props.nonInteractive === void 0 && $$bindings.nonInteractive && nonInteractive !== void 0)
+    $$bindings.nonInteractive(nonInteractive);
+  if ($$props.ripple === void 0 && $$bindings.ripple && ripple !== void 0)
+    $$bindings.ripple(ripple);
+  if ($$props.activated === void 0 && $$bindings.activated && activated !== void 0)
+    $$bindings.activated(activated);
+  if ($$props.role === void 0 && $$bindings.role && role !== void 0)
+    $$bindings.role(role);
+  if ($$props.selected === void 0 && $$bindings.selected && selected !== void 0)
+    $$bindings.selected(selected);
+  if ($$props.disabled === void 0 && $$bindings.disabled && disabled !== void 0)
+    $$bindings.disabled(disabled);
+  if ($$props.skipRestoreFocus === void 0 && $$bindings.skipRestoreFocus && skipRestoreFocus !== void 0)
+    $$bindings.skipRestoreFocus(skipRestoreFocus);
+  if ($$props.tabindex === void 0 && $$bindings.tabindex && tabindexProp !== void 0)
+    $$bindings.tabindex(tabindexProp);
+  if ($$props.inputId === void 0 && $$bindings.inputId && inputId !== void 0)
+    $$bindings.inputId(inputId);
+  if ($$props.href === void 0 && $$bindings.href && href !== void 0)
+    $$bindings.href(href);
+  if ($$props.component === void 0 && $$bindings.component && component !== void 0)
+    $$bindings.component(component);
+  if ($$props.action === void 0 && $$bindings.action && action !== void 0)
+    $$bindings.action(action);
+  if ($$props.getPrimaryText === void 0 && $$bindings.getPrimaryText && getPrimaryText !== void 0)
+    $$bindings.getPrimaryText(getPrimaryText);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  let $$settled;
+  let $$rendered;
+  do {
+    $$settled = true;
+    tabindex = isUninitializedValue(tabindexProp) ? !nonInteractive && !disabled && (selected || input) ? 0 : -1 : tabindexProp;
+    $$rendered = `${validate_component(component || missing_component, "svelte:component").$$render($$result, Object_1$1.assign({
+      use: [
+        ...nonInteractive ? [] : [
+          [
+            Ripple,
+            {
+              ripple: !input,
+              unbounded: false,
+              color: (activated || selected) && color == null ? "primary" : color,
+              disabled,
+              addClass,
+              removeClass,
+              addStyle
+            }
+          ]
+        ],
+        forwardEvents,
+        ...use
+      ]
+    }, {
+      class: classMap({
+        [className]: true,
+        "mdc-deprecated-list-item": true,
+        "mdc-deprecated-list-item--activated": activated,
+        "mdc-deprecated-list-item--selected": selected,
+        "mdc-deprecated-list-item--disabled": disabled,
+        "mdc-menu-item--selected": !nav && role === "menuitem" && selected,
+        "smui-menu-item--non-interactive": nonInteractive,
+        ...internalClasses
+      })
+    }, {
+      style: Object.entries(internalStyles).map(([name, value]) => `${name}: ${value};`).concat([style]).join(" ")
+    }, nav && activated ? { "aria-current": "page" } : {}, !nav ? { role } : {}, !nav && role === "option" ? {
+      "aria-selected": selected ? "true" : "false"
+    } : {}, !nav && (role === "radio" || role === "checkbox") ? {
+      "aria-checked": "false"
+    } : {}, !nav ? {
+      "aria-disabled": disabled ? "true" : "false"
+    } : {}, {
+      "data-menu-item-skip-restore-focus": skipRestoreFocus || void 0
+    }, { tabindex }, { href }, internalAttrs, $$restProps, { this: element }), {
+      this: ($$value) => {
+        element = $$value;
+        $$settled = false;
+      }
+    }, {
+      default: () => {
+        return `${ripple ? `<span class="${"mdc-deprecated-list-item__ripple"}"></span>` : ``}${slots.default ? slots.default({}) : ``}`;
+      }
+    })}`;
+  } while (!$$settled);
+  return $$rendered;
+});
+var Text = classAdderBuilder({
+  class: "mdc-deprecated-list-item__text",
+  component: Span
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-item__primary-text",
+  component: Span
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-item__secondary-text",
+  component: Span
+});
+const Graphic$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["use", "class", "getElement"]);
+  forwardEventsBuilder(get_current_component());
+  let { use = [] } = $$props;
+  let { class: className = "" } = $$props;
+  let element;
+  let menuSelectionGroup = getContext("SMUI:list:graphic:menu-selection-group");
+  function getElement() {
+    return element;
+  }
+  if ($$props.use === void 0 && $$bindings.use && use !== void 0)
+    $$bindings.use(use);
+  if ($$props.class === void 0 && $$bindings.class && className !== void 0)
+    $$bindings.class(className);
+  if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
+    $$bindings.getElement(getElement);
+  return `<span${spread([
+    {
+      class: escape_attribute_value(classMap({
+        [className]: true,
+        "mdc-deprecated-list-item__graphic": true,
+        "mdc-menu__selection-group-icon": menuSelectionGroup
+      }))
+    },
+    escape_object($$restProps)
+  ], {})}${add_attribute("this", element, 0)}>${slots.default ? slots.default({}) : ``}</span>`;
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-item__meta",
+  component: Span
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-group",
+  component: Div
+});
+classAdderBuilder({
+  class: "mdc-deprecated-list-group__subheader",
+  component: H3
+});
+const Item = Item$1;
+const Graphic = Graphic$1;
+classAdderBuilder({
+  class: "mdc-menu__selection-group-icon",
+  component: Graphic
 });
 const FloatingLabel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$restProps = compute_rest_props($$props, [
@@ -905,15 +1730,17 @@ const HelperText = create_ssr_component(($$result, $$props, $$bindings, slots) =
   ], {})}${add_attribute("this", element, 0)}>${`${slots.default ? slots.default({}) : ``}`}
 </div>`;
 });
-const ImageList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $$restProps = compute_rest_props($$props, ["use", "class", "masonry", "withTextProtection", "getElement"]);
+const Paper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["use", "class", "variant", "square", "color", "elevation", "transition", "getElement"]);
   forwardEventsBuilder(get_current_component());
   let { use = [] } = $$props;
   let { class: className = "" } = $$props;
-  let { masonry = false } = $$props;
-  let { withTextProtection = false } = $$props;
+  let { variant = "raised" } = $$props;
+  let { square = false } = $$props;
+  let { color = "default" } = $$props;
+  let { elevation = 1 } = $$props;
+  let { transition = false } = $$props;
   let element;
-  setContext("SMUI:label:context", "image-list");
   function getElement() {
     return element;
   }
@@ -921,116 +1748,249 @@ const ImageList = create_ssr_component(($$result, $$props, $$bindings, slots) =>
     $$bindings.use(use);
   if ($$props.class === void 0 && $$bindings.class && className !== void 0)
     $$bindings.class(className);
-  if ($$props.masonry === void 0 && $$bindings.masonry && masonry !== void 0)
-    $$bindings.masonry(masonry);
-  if ($$props.withTextProtection === void 0 && $$bindings.withTextProtection && withTextProtection !== void 0)
-    $$bindings.withTextProtection(withTextProtection);
+  if ($$props.variant === void 0 && $$bindings.variant && variant !== void 0)
+    $$bindings.variant(variant);
+  if ($$props.square === void 0 && $$bindings.square && square !== void 0)
+    $$bindings.square(square);
+  if ($$props.color === void 0 && $$bindings.color && color !== void 0)
+    $$bindings.color(color);
+  if ($$props.elevation === void 0 && $$bindings.elevation && elevation !== void 0)
+    $$bindings.elevation(elevation);
+  if ($$props.transition === void 0 && $$bindings.transition && transition !== void 0)
+    $$bindings.transition(transition);
   if ($$props.getElement === void 0 && $$bindings.getElement && getElement !== void 0)
     $$bindings.getElement(getElement);
-  return `<ul${spread([
+  return `<div${spread([
     {
       class: escape_attribute_value(classMap({
         [className]: true,
-        "mdc-image-list": true,
-        "mdc-image-list--masonry": masonry,
-        "mdc-image-list--with-text-protection": withTextProtection
+        "smui-paper": true,
+        "smui-paper--raised": variant === "raised",
+        "smui-paper--unelevated": variant === "unelevated",
+        "smui-paper--outlined": variant === "outlined",
+        ["smui-paper--elevation-z" + elevation]: elevation !== 0 && variant === "raised",
+        "smui-paper--rounded": !square,
+        ["smui-paper--color-" + color]: color !== "default",
+        "smui-paper-transition": transition
       }))
     },
     escape_object($$restProps)
   ], {})}${add_attribute("this", element, 0)}>${slots.default ? slots.default({}) : ``}
-</ul>`;
+</div>`;
 });
-var Item = classAdderBuilder({
-  class: "mdc-image-list__item",
-  component: Li
-});
-var ImageAspectContainer = classAdderBuilder({
-  class: "mdc-image-list__image-aspect-container",
+var Content = classAdderBuilder({
+  class: "smui-paper__content",
   component: Div
 });
-var Image = classAdderBuilder({
-  class: "mdc-image-list__image",
-  component: Img
+var Title = classAdderBuilder({
+  class: "smui-paper__title",
+  component: H5
 });
-var Supporting = classAdderBuilder({
-  class: "mdc-image-list__supporting",
-  component: Div
+classAdderBuilder({
+  class: "smui-paper__subtitle",
+  component: H6
 });
-var CardList_svelte_svelte_type_style_lang = "";
-const css = {
-  code: "@media(max-width: 599px){}",
+var CardButton_svelte_svelte_type_style_lang = "";
+const css$2 = {
+  code: ".wrapper.svelte-1smvacc{display:flex;align-items:center;flex-direction:column;min-width:100px;width:7vw;height:100%;margin:20px 5px}",
   map: null
 };
-const CardList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css);
-  return `${validate_component(ImageList, "ImageList").$$render($$result, { class: "my-ls", withTextProtection: true }, {}, {
+const CardButton = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { cardName } = $$props;
+  let { maxCardCount } = $$props;
+  let { onClick } = $$props;
+  let cardCount = 0;
+  if ($$props.cardName === void 0 && $$bindings.cardName && cardName !== void 0)
+    $$bindings.cardName(cardName);
+  if ($$props.maxCardCount === void 0 && $$bindings.maxCardCount && maxCardCount !== void 0)
+    $$bindings.maxCardCount(maxCardCount);
+  if ($$props.onClick === void 0 && $$bindings.onClick && onClick !== void 0)
+    $$bindings.onClick(onClick);
+  $$result.css.add(css$2);
+  return `<div class="${"wrapper svelte-1smvacc"}"><p style="${"text-align: center; width: 100%; height:min-content; overflow: hidden; text-overflow: ellipsis; margin: 0;"}">${escape(cardName)}</p>
+    <pre style="${"text-align: center; height:min-content; margin 1px 0;"}">(\uD22C\uC785: ${escape(maxCardCount)}\uC7A5)</pre>
+    ${validate_component(Button_1, "Button").$$render($$result, {
+    style: "height:fit-content; padding:0;",
+    variant: "raised"
+  }, {}, {
     default: () => {
-      return `${each(Array(15), (_unused, i) => {
-        return `${validate_component(Item, "Item").$$render($$result, {
-          style: "width:200px;display:inline-block; margin: 3px"
-        }, {}, {
-          default: () => {
-            return `<div>${validate_component(ImageAspectContainer, "ImageAspectContainer").$$render($$result, {}, {}, {
-              default: () => {
-                return `${validate_component(Image, "Image").$$render($$result, {
-                  src: "assets/images/anime_card.png",
-                  alt: "Image " + (i + 1)
-                }, {}, {})}
-                `;
-              }
-            })}
-                ${validate_component(Supporting, "Supporting").$$render($$result, {}, {}, {
-              default: () => {
-                return `${validate_component(Label, "Label").$$render($$result, {}, {}, {
-                  default: () => {
-                    return `Image ${escape(i + 1)}`;
-                  }
-                })}
-                `;
-              }
-            })}</div>
-        `;
-          }
-        })}`;
+      return `<img style="${"width: 100%;"}" src="${"/src/assets/images/anime_card2.jpg"}" alt="${"\uC720\uD76C\uC655 \uCE74\uB4DC"}">`;
+    }
+  })}
+    <div style="${"display:flex; align-items: center;"}">${validate_component(IconButton, "IconButton").$$render($$result, { class: "material-icons" }, {}, {
+    default: () => {
+      return `add`;
+    }
+  })}
+        <p>${escape(cardCount)}</p>
+        ${validate_component(IconButton, "IconButton").$$render($$result, { class: "material-icons" }, {}, {
+    default: () => {
+      return `remove`;
+    }
+  })}</div>
+</div>`;
+});
+var CardCombinations_svelte_svelte_type_style_lang = "";
+const css$1 = {
+  code: ".card-container.svelte-15wfvox{display:flex;flex-wrap:wrap;width:100%}",
+  map: null
+};
+const CardCombinations = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { cards = [] } = $$props;
+  function removeCard(index) {
+    const tempCards = Object.values(cards);
+    tempCards.splice(index, 1);
+    cards = tempCards;
+  }
+  if ($$props.cards === void 0 && $$bindings.cards && cards !== void 0)
+    $$bindings.cards(cards);
+  $$result.css.add(css$1);
+  return `${cards.length > 0 ? `${validate_component(Paper, "Paper").$$render($$result, { style: "margin: 20px;" }, {}, {
+    default: () => {
+      return `${validate_component(Title, "Title").$$render($$result, {}, {}, {
+        default: () => {
+          return `\uC870\uD569 1`;
+        }
+      })}
+        ${validate_component(Content, "Content").$$render($$result, {}, {}, {
+        default: () => {
+          return `<div class="${"card-container svelte-15wfvox"}">${each(cards, (card, i) => {
+            return `${validate_component(CardButton, "Card").$$render($$result, {
+              cardName: card.name,
+              maxCardCount: card.count,
+              onClick: () => removeCard(i)
+            }, {}, {})}`;
+          })}</div>`;
+        }
       })}`;
     }
-  })}`;
+  })}` : ``}`;
 });
+var index_svelte_svelte_type_style_lang = "";
+const css = {
+  code: ".wrapper.svelte-1qgjj8q{display:flex;justify-content:center;margin:8rem;width:auto}.wrapper.svelte-1qgjj8q>*{margin:7px}@media(max-width: 599px){.wrapper.svelte-1qgjj8q{flex-wrap:wrap;margin:5%}.wrapper.svelte-1qgjj8q>*{width:100%}}",
+  map: null
+};
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let deckInput = "";
-  let deckNum = "";
+  let deckNum = 40;
+  let nameOfCard = "";
+  let menu;
+  let cardArr = [];
+  $$result.css.add(css);
   let $$settled;
   let $$rendered;
   do {
     $$settled = true;
-    {
-      if (isNaN(deckInput)) {
-        deckInput = deckNum;
-      } else {
-        deckNum = deckInput;
-      }
-    }
-    $$rendered = `<div>${validate_component(Textfield, "Textfield").$$render($$result, {
+    $$rendered = `<div class="${"wrapper svelte-1qgjj8q"}"><div>${validate_component(Textfield, "Textfield").$$render($$result, {
       variant: "outlined",
       label: "\uB371 \uB9E4\uC218",
-      value: deckInput
+      style: "width: 100%;",
+      suffix: "\uC7A5",
+      input$pattern: "\\d+",
+      required: true,
+      value: deckNum
     }, {
       value: ($$value) => {
-        deckInput = $$value;
+        deckNum = $$value;
         $$settled = false;
       }
     }, {
       helper: () => {
-        return `${validate_component(HelperText, "HelperText").$$render($$result, { persistent: true, slot: "helper" }, {}, {
+        return `${validate_component(HelperText, "HelperText").$$render($$result, { slot: "helper" }, {}, {
           default: () => {
-            return `Helper Text`;
+            return `40 ~ 60\uC7A5\uC774\uC5B4\uC57C \uD569\uB2C8\uB2E4.`;
           }
         })}`;
       }
-    })}
+    })}</div>
+    ${validate_component(Textfield, "Textfield").$$render($$result, {
+      variant: "outlined",
+      label: "\uCD94\uAC00\uD560 \uCE74\uB4DC \uC774\uB984",
+      value: nameOfCard
+    }, {
+      value: ($$value) => {
+        nameOfCard = $$value;
+        $$settled = false;
+      }
+    }, {})}
 
-    <pre class="${"status"}">\uB371 \uB9E4\uC218: ${escape(deckNum)}</pre></div>
-${validate_component(CardList, "CardList").$$render($$result, {}, {}, {})}`;
+    ${validate_component(Group, "Group").$$render($$result, { variant: "raised" }, {}, {
+      default: () => {
+        return `${validate_component(Button_1, "Button").$$render($$result, {
+          style: "height: 56px;",
+          variant: "raised"
+        }, {}, {
+          default: () => {
+            return `${validate_component(Label, "Label").$$render($$result, {}, {}, {
+              default: () => {
+                return `\uCE74\uB4DC \uCD94\uAC00`;
+              }
+            })}`;
+          }
+        })}
+        <div>${validate_component(Button_1, "Button").$$render($$result, {
+          variant: "raised",
+          style: "height: 56px; padding: 0; min-width: 30px;"
+        }, {}, {
+          default: () => {
+            return `${validate_component(Icon, "Icon").$$render($$result, {
+              class: "material-icons",
+              style: "margin: 0;"
+            }, {}, {
+              default: () => {
+                return `arrow_drop_down`;
+              }
+            })}`;
+          }
+        })}
+            ${validate_component(Menu, "Menu").$$render($$result, { anchorCorner: "TOP_LEFT", this: menu }, {
+          this: ($$value) => {
+            menu = $$value;
+            $$settled = false;
+          }
+        }, {
+          default: () => {
+            return `${validate_component(List, "List").$$render($$result, {}, {}, {
+              default: () => {
+                return `${validate_component(Item, "Item").$$render($$result, {}, {}, {
+                  default: () => {
+                    return `${validate_component(Text, "Text").$$render($$result, {}, {}, {
+                      default: () => {
+                        return `1\uC7A5`;
+                      }
+                    })}`;
+                  }
+                })}
+                    ${validate_component(Item, "Item").$$render($$result, {}, {}, {
+                  default: () => {
+                    return `${validate_component(Text, "Text").$$render($$result, {}, {}, {
+                      default: () => {
+                        return `2\uC7A5`;
+                      }
+                    })}`;
+                  }
+                })}
+                    ${validate_component(Item, "Item").$$render($$result, {}, {}, {
+                  default: () => {
+                    return `${validate_component(Text, "Text").$$render($$result, {}, {}, {
+                      default: () => {
+                        return `3\uC7A5`;
+                      }
+                    })}`;
+                  }
+                })}`;
+              }
+            })}`;
+          }
+        })}</div>`;
+      }
+    })}</div>
+${validate_component(CardCombinations, "Combination").$$render($$result, { cards: cardArr }, {
+      cards: ($$value) => {
+        cardArr = $$value;
+        $$settled = false;
+      }
+    }, {})}`;
   } while (!$$settled);
   return $$rendered;
 });

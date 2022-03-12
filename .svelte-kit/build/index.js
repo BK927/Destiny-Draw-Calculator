@@ -1,11 +1,11 @@
 
 import root from '__GENERATED__/root.svelte';
-import { respond } from '/Users/dead4/source/repos/Destiny-Draw-Calculator/.svelte-kit/runtime/server/index.js';
-import { set_paths, assets, base } from '/Users/dead4/source/repos/Destiny-Draw-Calculator/.svelte-kit/runtime/paths.js';
-import { set_prerendering } from '/Users/dead4/source/repos/Destiny-Draw-Calculator/.svelte-kit/runtime/env.js';
+import { respond } from '/home/bk927/git/Destiny-Draw-Calculator/.svelte-kit/runtime/server/index.js';
+import { set_paths, assets, base } from '/home/bk927/git/Destiny-Draw-Calculator/.svelte-kit/runtime/paths.js';
+import { set_prerendering } from '/home/bk927/git/Destiny-Draw-Calculator/.svelte-kit/runtime/env.js';
 import * as user_hooks from "./hooks.js";
 
-const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\r\n<html lang=\"ko\">\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <meta name=\"description\" content=\"\" />\r\n        <link rel=\"icon\" href=\"" + assets + "/favicon.png\" />\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n\r\n        <!-- Fonts -->\r\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" />\r\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700\" />\r\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Mono\" />\r\n\r\n        <!-- SMUI Styles -->\r\n        <link rel=\"stylesheet\" href=\"/smui.css\" media=\"(prefers-color-scheme: light)\" />\r\n        <link rel=\"stylesheet\" href=\"/smui-dark.css\" media=\"screen and (prefers-color-scheme: dark)\" />\r\n\r\n        " + head + "\r\n    </head>\r\n    <body>\r\n        <div>" + body + "</div>\r\n    </body>\r\n</html>\r\n";
+const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n<html lang=\"ko\">\n    <head>\n        <meta charset=\"utf-8\" />\n        <meta name=\"description\" content=\"\" />\n        <link rel=\"icon\" href=\"" + assets + "/favicon.png\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n        <!-- Fonts -->\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" />\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700\" />\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto+Mono\" />\n\n        <!-- SMUI Styles -->\n        <!-- <link rel=\"stylesheet\" href=\"/smui.css\" media=\"(prefers-color-scheme: light)\" />\n        <link rel=\"stylesheet\" href=\"/smui-dark.css\" media=\"screen and (prefers-color-scheme: dark)\" /> -->\n        <link rel=\"stylesheet\" href=\"/smui-dark.css\" />\n\n        " + head + "\n    </head>\n    <body>\n        <div>" + body + "</div>\n    </body>\n</html>\n";
 
 let read = null;
 
