@@ -45,8 +45,8 @@
     </Row>
 </TopAppBar>
 
-<AutoAdjust {topAppBar} style="display: flex; justify-content: space-between;">
-    <div class="container"><slot /></div>
+<AutoAdjust {topAppBar}>
+    <slot />
 </AutoAdjust>
 
 <style>

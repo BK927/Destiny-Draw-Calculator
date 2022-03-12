@@ -58,6 +58,7 @@
         display: flex;
         justify-content: center;
         margin: 8rem;
+        width: auto;
     }
     .wrapper > :global(*) {
         margin: 7px;
