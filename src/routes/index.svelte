@@ -5,23 +5,34 @@
     import Textfield from "@smui/textfield";
     import HelperText from "@smui/textfield/helper-text";
     import Combination from "../components/CardCombinations.svelte";
-    import { mdiArmFlex } from "@mdi/js";
-    import Paper from "@smui/paper/src/Paper.svelte";
+    import IconButton from "@smui/icon-button";
+    import { cards } from "../utilities/cardsStorage.js";
 
     let deckNum: number = 40;
     let cardNum: number = 1;
+    let numOfCombinations = 1;
     let nameOfCard: string = "";
     let menu: MenuComponentDev;
-    let cardArr = [];
+    let cardArr;
+
+    cards.subscribe((value) => {
+        cardArr = value;
+    });
+
+    $: if (cardArr.length <= 0) {
+        numOfCombinations = 1;
+    }
 
     function addCard() {
-        cardArr = cardArr.concat({ name: nameOfCard, count: cardNum });
+        if (!!nameOfCard) {
+            cards.set(cardArr.concat({ name: nameOfCard, count: cardNum }));
+        }
     }
 </script>
 
 <div class="wrapper">
     <div>
-        <Textfield variant="outlined" bind:value={deckNum} label="덱 매수" style="width: 100%;" suffix="장" input$pattern="\[0-9]" required>
+        <Textfield variant="outlined" bind:value={deckNum} type="number" label="덱 매수" style="width: 100%;" suffix="장" input$pattern="\[0-9]" required>
             <HelperText slot="helper">40 ~ 60장이어야 합니다.</HelperText>
         </Textfield>
     </div>
@@ -51,7 +62,12 @@
         </div>
     </Group>
 </div>
-<Combination bind:cards={cardArr} />
+{#each Array(numOfCombinations) as _, i}
+    <Combination index={i + 1} />
+{/each}
+<div class="wrapper">
+    <IconButton class="material-icons" style="font-size: 2.5rem; width:auto;" on:click={() => numOfCombinations++}>add_circle_outline</IconButton>
+</div>
 
 <style>
     .wrapper {
