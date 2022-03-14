@@ -6,27 +6,41 @@
     import HelperText from "@smui/textfield/helper-text";
     import Combination from "../components/CardCombinations.svelte";
     import IconButton from "@smui/icon-button";
-    import { cards } from "../utilities/cardsStorage.js";
+    import { cards, combinationList } from "../utilities/cardsStorage.js";
 
     let deckNum: number = 40;
     let cardNum: number = 1;
-    let numOfCombinations = 1;
     let nameOfCard: string = "";
     let menu: MenuComponentDev;
+
     let cardArr;
+    let numOfCombinations = 0;
 
     cards.subscribe((value) => {
         cardArr = value;
     });
 
-    $: if (cardArr.length <= 0) {
-        numOfCombinations = 1;
-    }
-
     function addCard() {
         if (!!nameOfCard) {
-            cards.set(cardArr.concat({ name: nameOfCard, count: cardNum }));
+            const filler = [];
+            for (let i = 0; i < numOfCombinations; i++) {
+                filler.push(false);
+            }
+            cards.set(cardArr.concat({ name: nameOfCard, count: cardNum, combinationArr: filler }));
         }
+
+        if (numOfCombinations === 0) {
+            numOfCombinations++;
+        }
+    }
+
+    function addCombination() {
+        const temp = cardArr.map((item) => {
+            item["combinationArr"].push(false);
+            return item;
+        });
+
+        cards.set(temp);
     }
 </script>
 
@@ -63,7 +77,7 @@
     </Group>
 </div>
 {#each Array(numOfCombinations) as _, i}
-    <Combination index={i + 1} />
+    <Combination index={i} bind:numOfCombinations />
 {/each}
 <div class="wrapper">
     <IconButton class="material-icons" style="font-size: 2.5rem; width:auto;" on:click={() => numOfCombinations++}>add_circle_outline</IconButton>

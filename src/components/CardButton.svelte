@@ -15,7 +15,7 @@
 <div class="wrapper">
     <p style="text-align: center; width: 100%; height:min-content; overflow: hidden; text-overflow: ellipsis;">{cardName}</p>
     <!-- <pre style="text-align: center; height:min-content; margin 1px 0;">(투입: {maxCardCount}장)</pre> -->
-    <Button on:click={() => (checked = !checked)} style="height:fit-content; padding:0;" variant="raised">
+    <Button on:click={onClickFunc} style="height:fit-content; padding:0;" variant="raised">
         <Checkbox bind:checked />
         <img style="width: 100%;" src="/images/anime_card2-min.jpg" alt="유희왕 카드" />
     </Button>
