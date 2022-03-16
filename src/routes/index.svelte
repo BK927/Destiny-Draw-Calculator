@@ -6,9 +6,8 @@
     import HelperText from "@smui/textfield/helper-text";
     import Combination from "../components/CardCombinations.svelte";
     import IconButton from "@smui/icon-button";
-    import { cards, combinationList } from "../utilities/cardsStorage.js";
+    import { cards, numberOfDeck } from "../utilities/cardsStorage.js";
 
-    let deckNum: number = 40;
     let cardNum: number = 1;
     let nameOfCard: string = "";
     let menu: MenuComponentDev;
@@ -46,7 +45,7 @@
 
 <div class="wrapper">
     <div>
-        <Textfield variant="outlined" bind:value={deckNum} type="number" label="덱 매수" style="width: 100%;" suffix="장" input$pattern="\[0-9]" required>
+        <Textfield variant="outlined" bind:value={$numberOfDeck} type="number" label="덱 매수" style="width: 100%;" suffix="장" input$pattern="\[0-9]" required>
             <HelperText slot="helper">40 ~ 60장이어야 합니다.</HelperText>
         </Textfield>
     </div>
